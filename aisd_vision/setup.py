@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            "py_node = aisd_vision.my_first_node:main"
         ],
     },
 )
