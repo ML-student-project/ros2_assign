@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os   #kt added
+from glob import glob  #kt added
 
 package_name = 'aisd_vision'
 
@@ -10,6 +12,8 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        # Install data files from the resource/data folder
+        (os.path.join('share', package_name, 'resource', 'data'), glob('resource/data/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,7 +28,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "py_node = aisd_vision.my_first_node:main"
+            "py_node = aisd_vision.my_first_node:main",
+            "gesture_node = aisd_vision.gesture_node:main"
         ],
     },
 )
