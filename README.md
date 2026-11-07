@@ -8,26 +8,58 @@ hand gesture control of create3 robot.
 ## Requirements
 In Linux, python (ROS2, opencv, mediapipe)
 
+**Create your new workspace**
 
-1) mkdir your_ws      #create your new workspace
-2) cd your_ws
-3) mkdir src
-4) cd src
+1) Create your new workspace directory
+
+```
+mkdir your_ws      
+```
+2) cd into your ws
+```
+cd your_ws
+```
+
+3) Create the src directory
+```
+mkdir src
+```
+4) Change dir to src
+```
+cd src
+```
 5) clone git repo here
+```
+git clone https://your_git_repo_url_here
+```
 
-# Now to install the python packages
-6) cd ~/your_ws
-7) sudo apt update
-   pip3 install "numpy>=2"  
-   pip3 install opencv-python-headless  opencv-contrib-python
-   pip3 install mediapipe
-   sudo apt-get install libgles2   
+**Now to install the python packages:**
 
-8) colcon build       # it will create new dirs and compile code.
-9) source install/setup.py
+1) Verify your are at the root of your workspace.
+```
+cd ~/your_ws
+```
+2) Install required packages
+```
+sudo apt update
+pip3 install "numpy>=2"  
+pip3 install opencv-python-headless  opencv-contrib-python
+pip3 install mediapipe
+sudo apt-get install libgles2   
+```
 
-# Run the first node test
-10) ros2 run aisd_vision py_node
+3) Build the packages. It will create new directories under your ws directory
+```
+colcon build
+```
+4) Source the setup file.
+```
+source install/setup.py
+```
+**Run the first node test**
+```
+ros2 run aisd_vision py_node
+```
 
 
 
@@ -43,13 +75,13 @@ To deploy and run the project in a demonstration environment:
    source ~/your_ws/install/setup.bash
    ```
 3. Connect your Create3 robot and ensure it is powered on and accessible.
-4. Launch the gesture control node:
+4. Launch the gesture publisher node:
    ```
    ros2 run aisd_vision gesture_publisher
    ```
 5. In another terminal:
    - Run step 2 above.
-   - Launch the gesture control node:
+   - Launch the motion listener node:
    ```
    ros2 run aisd_vision motion_listener
    ```   
