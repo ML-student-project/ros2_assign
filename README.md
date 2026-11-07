@@ -6,8 +6,10 @@ hand gesture control of create3 robot.
 
 <!-- REQUIREMENTS -->
 ## Requirements
-In Linux, python (ROS2, opencv, mediapipe)
+In Linux, python (ROS2, opencv, mediapipe).
 
+<!-- INSTALL -->
+## Install
 **Create your new workspace**
 
 1) Create your new workspace directory
@@ -48,15 +50,20 @@ pip3 install mediapipe
 sudo apt-get install libgles2   
 ```
 
-3) Build the packages. It will create new directories under your ws directory
+3) Install dependencies.
+```
+rosdep install --from-paths src --ignore-src -y
+```
+
+4) Build the packages. It will create new directories under your ws directory
 ```
 colcon build
 ```
-4) Source the setup file.
+5) Source the setup file.
 ```
 source install/setup.py
 ```
-**Run the first node test**
+6) Run the first node test
 ```
 ros2 run aisd_vision py_node
 ```
