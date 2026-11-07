@@ -34,7 +34,26 @@ In Linux, python (ROS2, opencv, mediapipe)
 
 <!-- DEPLOYMENT -->
 ## DEPLOYMENT
-To run 
+
+To deploy and run the project in a demonstration environment:
+
+1. Ensure all requirements are installed and the workspace is built as described above.
+2. Source your ROS2 workspace:
+   ```
+   source ~/your_ws/install/setup.bash
+   ```
+3. Connect your Create3 robot and ensure it is powered on and accessible.
+4. Launch the gesture control node:
+   ```
+   ros2 run aisd_vision gesture_publisher
+   ```
+5. In another terminal:
+   - Run step 2 above.
+   - Launch the gesture control node:
+   ```
+   ros2 run aisd_vision motion_listener
+   ```   
+
 
 
 <!-- TEAM -->
